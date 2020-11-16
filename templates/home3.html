@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+{% if Notes %}
+<div class="container-sm">
+<div class="card-deck">
+<h2 id=message></h2>
+    {% for notes in Notes %}
+      <div class="card">
+        {% if notes.image %}
+        <img src="{{ notes.image }}" class="card-img-top" alt="...">
+        {% endif %} 
+        <div class="card-body">
+          <h5 class="card-title" id='title' name="title">{{ notes.title }}</h5>
+          <p class="card-text">{{ notes.note}}</p>
+          <p class="card-text"><small class="text-muted">{{ notes.time}}</small></p>
+          {% include 'model.html' %}
+          {% include 'home2.html' %}
+
+        </div>
+        </div>
+
+    {% endfor %}  
+  </div>
+</div>
+    
+{% else  %}
+<h1>Sorry No Notes Found</h1>
+        {% endif %}
+{% endblock %}

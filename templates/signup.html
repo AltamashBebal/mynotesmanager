@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block loginsignup %}
+<ul class="navbar-nav mr-auto" style="margin-left:850px">
+<li class="nav-item active" style="margin-left: 170px;margin-bottom: 5px;">
+    <a class="btn btn-primary" href="{% url 'signup' %}">Signup</a>
+</li>
+<li class="nav-item active" style="margin-left: 10px;" >
+    <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+    </li>
+</ul>
+{% endblock %} 
+{% load static   %}
+{% block content %}
+<div class="signdiv">
+<div class="container-sm">
+    <h2 id="h2">Sign Up</h2>
+    <div>
+        {% for message in messages %}
+        <h3 id="h3"> {{message}}  </h3>
+        {% endfor %}
+    <form class="form" method="POST">        {% csrf_token %}
+
+      <div class="form-group">
+        <label for="exampleInputEmail1"><b>First Name</label>
+        <input required type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Last Name</label>
+        <input required type="text" name="last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email / User Name</label>
+        <input required type="email" name="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Demo@gmail.com">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input required type="password" name="password1" class="form-control" id="exampleInputPassword1" placeholder="Passsword">
+      </div>
+      
+      <p id="signup">Already Have an Account <a href="{% url 'login' %}">Log In</a> here</p>
+     
+      <button type="submit" class="btn btn-primary" id="btn"><b>Sign Up</b></button>
+
+    </div>
+    </form> 
+    
+</div>
+      {% endblock %}

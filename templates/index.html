@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="{% static 'images/logo.png' %}" alt="Logo" width="50px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                {% block loginsignup %}
+                <ul class="navbar-nav mr-auto" style="margin-left:900px">
+                <li class="nav-item active" style="margin-left: 170px;margin-bottom: 5px;">
+                    <a class="btn btn-primary" href="{% url 'signup' %}">Signup</a>
+                </li>
+                <li class="nav-item active" style="margin-left: 10px;" >
+                    <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+                    </li>
+                </ul>
+                {% endblock %}  
+            </div>
+      </nav>
+ -->
+
+
+    <div class="left-section">
+        <h2>Manage all your tasks <br> here!</h2>
+        <a href="{% url 'login' %}"><button type="button"  class="btn btn-primary">Try for free!</button></a>
+    </div>
+    <div class="img">
+        <img src="{% static 'images/pic.jpeg' %}" class="img-fluid bg-img" alt="bg-img">
+    </div>
+
+
+
+
+{% endblock %}
+ 
